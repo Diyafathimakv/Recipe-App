@@ -1,0 +1,132 @@
+/* 🔹 Header Container */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  background: #fffdf9;
+  border-bottom: 1px solid #e5d3b3;
+}
+
+/* 🔹 Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #6b4f3b;
+}
+
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;     /* 🔥 this crops & zooms */
+}
+
+/* 🔹 Center Nav */
+.nav-center {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex: 1; /* IMPORTANT: pushes it to center */
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: #3e2c23;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-center a:hover {
+  color: #c27c5a;
+}
+
+/* 🔹 Right Section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 40px; /* 🔥 pushes section slightly inward */
+}
+/* 🔍 Search */
+.search {
+  width: 260px;   /* 🔥 increase size */
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: 1px solid #d6c4a8;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Push search slightly toward center */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+/* Logout */
+.logout-btn {
+  padding: 6px 12px;
+  border: none;
+  background: #e11d48;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #be123c;
+}
+
+.search:focus {
+  border-color: #c27c5a;
+  box-shadow: 0 0 5px rgba(194, 124, 90, 0.3);
+}
+
+/* 👤 Profile */
+.profile {
+  font-size: 30px;
+  text-decoration: none;
+  color: #3e2c23;
+}
+
+
+.profile:hover {
+  color: #c27c5a;
+}
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.brand-main {
+  color: #4b2e2e;
+}
+
+.brand-accent {
+  color: #c27c5a; /* accent color */
+  margin-left: 4px;
+}
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .nav-center {
+    display: none; /* hide nav on small screens (optional) */
+  }
+
+  .search {
+    width: 120px;
+  }
+}

@@ -1,17 +1,26 @@
-import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Login from './Pages/Auth/Login/App'
-import SignUp from './Pages/Auth/Signup/App'
+import { Routes, Route } from "react-router-dom";
+import Login from "./Pages/Auth/Login/App";
+import SignUp from "./Pages/Auth/Signup/App";
+import Layout from "./Layout";
+
+import Home from "./Pages/HomePage/App";
+
 const App = () => {
   return (
-    <div>
-      
-      <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/signup' element={<SignUp />} />
-      </Routes>
-    </div>
-  )
-}
+    <Routes>
 
-export default App
+      {/* ❌ No Header/Footer */}
+      <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+
+      {/* ✅ With Header + Footer */}
+      <Route element={<Layout />}>
+        <Route path="/home" element={<Home />} />
+
+      </Route>
+
+    </Routes>
+  );
+};
+
+export default App;
