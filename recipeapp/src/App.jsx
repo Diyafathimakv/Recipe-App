@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Pages/Auth/Login/App";
 import SignUp from "./Pages/Auth/Signup/App";
 import Layout from "./Layout";
-import Favorites from "./Pages/Favorites";
+import Favorites from "./Pages/Favorites/index";
 
 import Home from "./Pages/HomePage/App";
 
