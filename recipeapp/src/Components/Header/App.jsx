@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../Pages/Auth/Firebase"; // adjust path
 import { useSearchContext } from "../../Context/SearchContext";
+import Logo from '../../assets/Logoo.png'
 import './App.css'
 
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
     <header className="header">
 
       {/* Logo */}
-      <div className="logo">🍲 RecipeApp</div>
+      <div className="logo"><img src={Logo} alt="logo"/> RecipeApp</div>
 
       {/* Nav */}
       <nav className="nav-center">

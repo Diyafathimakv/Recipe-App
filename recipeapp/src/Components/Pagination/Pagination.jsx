@@ -1,31 +1,38 @@
 import "./Pagination.css";
 
-const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
+const Pagination = ({
+  totalPages,
+  currentPage,
+  setCurrentPage,
+}) => {
   return (
     <div className="pagination">
+
+      {/* PREV */}
       <button
         disabled={currentPage === 1}
-        onClick={() => setCurrentPage((prev) => prev - 1)}
+        onClick={() =>
+          setCurrentPage((prev) => prev - 1)
+        }
       >
         Prev
       </button>
 
-      {[...Array(totalPages)].map((_, index) => (
-        <button
-          key={index}
-          className={currentPage === index + 1 ? "active" : ""}
-          onClick={() => setCurrentPage(index + 1)}
-        >
-          {index + 1}
-        </button>
-      ))}
+      {/* CURRENT PAGE */}
+      <span className="page-number">
+        {currentPage}
+      </span>
 
+      {/* NEXT */}
       <button
         disabled={currentPage === totalPages}
-        onClick={() => setCurrentPage((prev) => prev + 1)}
+        onClick={() =>
+          setCurrentPage((prev) => prev + 1)
+        }
       >
         Next
       </button>
+
     </div>
   );
 };

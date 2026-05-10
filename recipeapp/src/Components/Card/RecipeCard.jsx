@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "./RecipeCard.css";
 
 const RecipeCard = ({ meal }) => {
   const [isFav, setIsFav] = useState(false);
+  const navigate=useNavigate()
 
   // 🔹 Load favorite status
   useEffect(() => {
@@ -58,10 +60,14 @@ const RecipeCard = ({ meal }) => {
       <div className="card-body">
         <h3>{meal.strMeal}</h3>
         <p>{meal.strCategory}</p>
-
-        <button className="view-btn">
-          View Recipe
-        </button>
+<button
+  className="view-btn"
+  onClick={() =>
+    navigate(`/recipe/${meal.idMeal}`)
+  }
+>
+  View Recipe
+</button>
       </div>
 
     </div>
