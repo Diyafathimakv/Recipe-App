@@ -1,13 +1,7 @@
-.categories-container {
+\.categories-container {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
 }
 
 .categories-container h2 {
@@ -45,36 +39,32 @@
 .active-category {
   background: #c27c5a !important;
   color: white !important;
-  box-shadow: 0 4px 12px rgba(194,124,90,0.4);
+  box-shadow: 0 4px 12px rgba(194, 124, 90, 0.4);
   transform: scale(1.05);
 }
 
+/* GRID FOR MEALS */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* RESPONSIVE GRID */
 @media (max-width: 1024px) {
   .card-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-<<<<<<< HEAD
-.meal-card:hover {
-  transform: translateY(-5px);
-}
-
-.meal-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.meal-card h4 {
-  padding: 10px;
-  font-size: 18px;
-}
-
-=======
 @media (max-width: 768px) {
   .card-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
->>>>>>> main
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
