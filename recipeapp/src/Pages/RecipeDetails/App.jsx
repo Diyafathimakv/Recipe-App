@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
 import "./App.css";
 
 const RecipeDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [meal, setMeal] =
     useState(null);
@@ -55,6 +56,12 @@ const steps = meal.strInstructions
 
   return (
     <div className="details-page">
+      <button
+  className="back-btn"
+  onClick={() => navigate(-1)}
+>
+  ← Back
+</button>
       <div className="details-card">
         <img
           src={meal.strMealThumb}

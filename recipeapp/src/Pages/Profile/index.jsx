@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../Auth/Firebase.jsx";
+import RecipeCard from "../../Components/Card/RecipeCard";
 import "./index.css";
 
 const Profile = () => {
@@ -44,14 +45,14 @@ const Profile = () => {
         {recentFavorites.length === 0 ? (
           <p className="empty-text">No favorites added yet.</p>
         ) : (
-          <div className="recent-grid">
-            {recentFavorites.map((item) => (
-              <div className="recent-card" key={item.idMeal}>
-                <img src={item.strMealThumb} alt={item.strMeal} />
-                <h4>{item.strMeal}</h4>
-              </div>
-            ))}
-          </div>
+      <div className="recent-grid">
+  {recentFavorites.map((item) => (
+    <RecipeCard
+      key={item.idMeal}
+      meal={item}
+    />
+  ))}
+</div>
         )}
       </div>
     </div>
