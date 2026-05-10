@@ -54,7 +54,8 @@
   background-color: darkred;
 }
 
-/* ✅ Responsive */
+/* Responsive */
+
 @media (max-width: 1024px) {
   .favorites-grid {
     grid-template-columns: repeat(3, 1fr);
