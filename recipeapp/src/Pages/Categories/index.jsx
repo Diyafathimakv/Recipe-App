@@ -81,26 +81,44 @@ const currentMeals = filteredMeals.slice(
     <div className="categories-container">
       <h2>Categories</h2>
 
-      <div className="category-buttons">
-        {categories.map((item) => (
-          <button
-            key={item.idCategory}
-            className={
-              activeCategory ===
-              item.strCategory
-                ? "active-category"
-                : ""
-            }
-            onClick={() =>
-              getMealsByCategory(
-                item.strCategory
-              )
-            }
-          >
-            {item.strCategory}
-          </button>
-        ))}
-      </div>
+ <div className="category-buttons">
+  {categories.map((item) => (
+    <button
+      key={item.idCategory}
+      className={
+        activeCategory === item.strCategory
+          ? "active-category"
+          : ""
+      }
+      onClick={() =>
+        getMealsByCategory(
+          item.strCategory
+        )
+      }
+    >
+      {item.strCategory}
+    </button>
+  ))}
+</div>
+
+<select
+  className="category-dropdown"
+  value={activeCategory}
+  onChange={(e) =>
+    getMealsByCategory(
+      e.target.value
+    )
+  }
+>
+  {categories.map((item) => (
+    <option
+      key={item.idCategory}
+      value={item.strCategory}
+    >
+      {item.strCategory}
+    </option>
+  ))}
+</select>
 
       <div className="card-container">
         {currentMeals.map((meal) => (
