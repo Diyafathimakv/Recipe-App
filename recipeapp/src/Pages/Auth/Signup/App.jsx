@@ -71,6 +71,7 @@ const SignUp = () => {
 
   return (
     <div  className="auth-container">
+ 
       <form  className="auth-form" onSubmit={formik.handleSubmit}>
         <h1>Signup</h1>
 

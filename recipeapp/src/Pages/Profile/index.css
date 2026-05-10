@@ -6,13 +6,15 @@
   margin-bottom: 20px;
 }
 
-/* Same feel as your other pages */
+/* USER CARD */
 .profile-card {
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   padding: 16px;
   border-radius: 12px;
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  overflow-wrap: break-word;
 }
 
 .label {
@@ -25,9 +27,10 @@
   margin: 6px 0 0;
   font-size: 18px;
   font-weight: 600;
+  word-break: break-word;
 }
 
-/* Stats */
+/* STATS */
 .stats-row {
   margin-top: 20px;
 }
@@ -44,7 +47,6 @@
 .stats-title {
   margin: 0;
   font-size: 14px;
-  opacity: 0.9;
 }
 
 .stats-value {
@@ -53,7 +55,7 @@
   font-weight: 700;
 }
 
-/* Recent Favorites (same card style as Favorites/Categories) */
+/* FAVORITES */
 .recent-section {
   margin-top: 30px;
 }
@@ -70,7 +72,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  width: 100%;
 }
 
 /* Tablet */
@@ -85,11 +86,32 @@
   .recent-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .stats-card {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
+  .profile-container {
+    padding: 16px;
+  }
+
   .recent-grid {
     grid-template-columns: 1fr;
+  }
+
+  .value {
+    font-size: 15px;
+  }
+
+  .stats-value {
+    font-size: 26px;
   }
 }

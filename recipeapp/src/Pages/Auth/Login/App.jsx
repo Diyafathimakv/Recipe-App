@@ -9,6 +9,7 @@ import '../App.css'
 const Login = () => {
   const navigate = useNavigate();
   const [authError, setAuthError] = useState(""); // ✅ error state
+  
 
   const formik = useFormik({
     initialValues: {
@@ -50,6 +51,7 @@ const Login = () => {
 
   return (
     <div  className="auth-container">
+  
       <form className="auth-form" onSubmit={formik.handleSubmit}>
         <h1>Login</h1>
 

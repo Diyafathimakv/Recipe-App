@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -10,9 +10,13 @@ const firebaseConfig = {
     import.meta.env.VITE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_APP_ID,
   measurementId:
-    import.meta.env.VITE_MEASUREMENT_ID
+    import.meta.env.VITE_MEASUREMENT_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+// Prevent duplicate app error
+const app =
+  getApps().length === 0
+    ? initializeApp(firebaseConfig)
+    : getApps()[0];
 
 export const auth = getAuth(app);

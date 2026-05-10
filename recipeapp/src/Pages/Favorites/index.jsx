@@ -31,14 +31,11 @@ const Favorites = () => {
     setLoading(false);
   }, []);
 
-  const filteredFavorites =
-    favorites.filter((meal) =>
-      meal.strMeal
-        .toLowerCase()
-        .startsWith(
-          query.toLowerCase()
-        )
-    );
+const filteredFavorites = favorites.filter((meal) =>
+  meal?.strMeal
+    ?.toLowerCase()
+    ?.includes(query.toLowerCase())
+);
 
   if (loading) return <Loader />;
 
