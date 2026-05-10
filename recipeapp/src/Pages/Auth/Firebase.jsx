@@ -2,18 +2,17 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCE4i4hbPlJK9D8K87Xne0KLsFkgqNhlHU",
-  authDomain: "recipeappauth-a233f.firebaseapp.com",
-  projectId: "recipeappauth-a233f",
-  storageBucket: "recipeappauth-a233f.firebasestorage.app",
-  messagingSenderId: "676292651988",
-  appId: "1:676292651988:web:de3983a9083cbc789d8441",
-  measurementId: "G-DZ1DHYEK7J"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId:
+    import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId:
+    import.meta.env.VITE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ✅ Initialize Auth (IMPORTANT)
 export const auth = getAuth(app);
-
