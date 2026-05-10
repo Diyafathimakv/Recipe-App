@@ -5,9 +5,11 @@
   padding: 12px 18px;
   background: #fffdf9;
   border-bottom: 1px solid #e5d3b3;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   gap: 12px;
-  flex-wrap: nowrap;   /* keep single row */
+  flex-wrap: nowrap;
 }
 
 /* Logo */
